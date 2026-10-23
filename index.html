@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Catálogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho" id="inicio">
+        <div class="logo">Meu Site</div>
+
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <main id="catalogo">
+
+        <!-- ITEM 1 -->
+        <section class="item">
+
+            <div class="miniaturas">
+                <button class="miniatura ativa"
+                    data-imagem="imagens/item1-1.png"
+                    data-descricao="Por algum tempo após o seu nascimento, ele utiliza os nutrientes armazenados na semente que carrega nas costas para crescer."
+                    data-descricao2="Detalhes da primeira imagem"
+                    aria-label="Ver primeira imagem"
+                    aria-pressed="true">
+                    <img src="imagens/item1-1.png" alt="Primeira imagem">
+                </button>
+
+                <button class="miniatura"
+                    data-imagem="imagens/item1-2.png"
+                    data-descricao="Quanto mais luz solar o Ivysaur recebe, mais força surge dentro dele, permitindo que o botão em suas costas cresça."
+                    data-descricao2="Detalhes da segunda imagem"
+                    aria-label="Ver segunda imagem"
+                    aria-pressed="false">
+                    <img src="imagens/item1-2.png" alt="Segunda imagem">
+                </button>
+
+                <button class="miniatura"
+                    data-imagem="imagens/item1-3.png"
+                    data-descricao="Ao abrir as amplas pétalas de sua flor e captar os raios de sol, ela preenche seu corpo de energia."
+                    data-descricao2="Detalhes da terceira imagem"
+                    aria-label="Ver terceira imagem"
+                    aria-pressed="false">
+                    <img src="imagens/item1-3.png" alt="Terceira imagem">
+                </button>
+            </div>
+
+            <div class="imagem-principal">
+                <img class="imagem-atual"
+                    src="imagens/item1-1.png"
+                    alt="Imagem principal do item 1">
+            </div>
+
+            <aside class="informacoes">
+                <div class="descricao">
+                    <h3>Descrição</h3>
+                    <p class="texto-descricao">
+                        Esta é a descrição da primeira imagem.
+                    </p>
+                </div>
+
+                <div class="descricao-secundaria">
+                    <div class="bolinhas">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <p class="texto-descricao2">
+                        Detalhes da primeira imagem
+                    </p>
+                </div>
+            </aside>
+
+        </section>
+
+        <!-- ITEM 2 -->
+        <section class="item">
+
+            <div class="miniaturas">
+                <button class="miniatura ativa"
+                    data-imagem="imagens/item2-1.png"
+                    data-descricao="A chama em sua cauda revela a força de sua energia vital. Se o Charmander estiver fraco, a chama também arde de forma fraca."
+                    data-descricao2="Detalhes do segundo item"
+                    aria-label="Ver primeira imagem do segundo item"
+                    aria-pressed="true">
+                    <img src="imagens/item2-1.png" alt="Primeira imagem do segundo item">
+                </button>
+
+                <button class="miniatura"
+                    data-imagem="imagens/item2-2.png"
+                    data-descricao="Ao balançar sua cauda em chamas, a temperatura ao seu redor sobe cada vez mais, atormentando seus oponentes."
+                    data-descricao2="Detalhes alternativos do segundo item"
+                    aria-label="Ver segunda imagem do segundo item"
+                    aria-pressed="false">
+                    <img src="imagens/item2-2.png" alt="Segunda imagem do segundo item">
+                </button>
+
+                <button class="miniatura"
+                    data-imagem="imagens/item2-3.png"
+                    data-descricao="
+Suas asas podem levar este Pokémon a uma altitude de quase 4.600 pés. Ele expele fogo a temperaturas muito elevadas."
+                    data-descricao2="Mais detalhes do segundo item"
+                    aria-label="Ver terceira imagem do segundo item"
+                    aria-pressed="false">
+                    <img src="imagens/item2-3.png" alt="Terceira imagem do segundo item">
+                </button>
+            </div>
+
+            <div class="imagem-principal">
+                <img class="imagem-atual"
+                    src="imagens/item2-1.png"
+                    alt="Imagem principal do item 2">
+            </div>
+
+            <aside class="informacoes">
+                <div class="descricao">
+                    <h3>Descrição</h3>
+                    <p class="texto-descricao">
+                        Descrição da primeira imagem do segundo item.
+                    </p>
+                </div>
+
+                <div class="descricao-secundaria">
+                    <div class="bolinhas">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <p class="texto-descricao2">
+                        Detalhes do segundo item
+                    </p>
+                </div>
+            </aside>
+
+        </section>
+
+        <!-- Copie a section.item para adicionar novos itens -->
+
+    </main>
+
+    <footer class="rodape">
+        <p>Meu Site © 2026</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll(".item").forEach((item) => {
+            const miniaturas = item.querySelectorAll(".miniatura");
+            const imagemCentral = item.querySelector(".imagem-atual");
+            const descricao1 = item.querySelector(".texto-descricao");
+            const descricao2 = item.querySelector(".texto-descricao2");
+
+            miniaturas.forEach((miniatura) => {
+                miniatura.addEventListener("click", () => {
+                    imagemCentral.src = miniatura.dataset.imagem;
+                    imagemCentral.alt = miniatura.querySelector("img").alt;
+
+                    descricao1.textContent = miniatura.dataset.descricao;
+                    descricao2.textContent = miniatura.dataset.descricao2;
+
+                    miniaturas.forEach((botao) => {
+                        botao.classList.remove("ativa");
+                        botao.setAttribute("aria-pressed", "false");
+                    });
+
+                    miniatura.classList.add("ativa");
+                    miniatura.setAttribute("aria-pressed", "true");
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

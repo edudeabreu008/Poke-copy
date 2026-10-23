@@ -1,0 +1,386 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f7;
+    color: #252525;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    min-height: 76px;
+    padding: 16px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background-color: #c62828;
+    color: #ffffff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu a {
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    opacity: 0.9;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+.menu a:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 28px 4%;
+}
+
+/* CARDS DOS ITENS */
+.item {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr) 190px;
+    align-items: center;
+    gap: 26px;
+    padding: 28px;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e8e8ec;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(25, 25, 35, 0.045);
+    transition: box-shadow 0.2s;
+}
+
+.item:hover {
+    box-shadow: 0 8px 24px rgba(25, 25, 35, 0.08);
+}
+
+/* MINIATURAS */
+.miniaturas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.miniatura {
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #fafafa;
+    border: 1px solid #dedee4;
+    border-radius: 12px;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.miniatura:hover {
+    border-color: #c62828;
+    background-color: #fff4f4;
+}
+
+.miniatura.ativa {
+    border: 2px solid #c62828;
+    background-color: #fff4f4;
+}
+
+.miniatura img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.miniatura:focus-visible {
+    outline: 2px solid #c62828;
+    outline-offset: 3px;
+}
+
+/* IMAGEM PRINCIPAL */
+.imagem-principal {
+    width: 100%;
+    height: 320px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fafafa;
+    border: 1px solid #eeeeF2;
+    border-radius: 12px;
+}
+
+.imagem-principal img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.imagem-principal:hover img {
+    transform: scale(1.025);
+}
+
+/* INFORMAÇÕES */
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    min-width: 0;
+}
+
+.descricao h3 {
+    margin-bottom: 8px;
+    color: #292929;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.descricao p {
+    color: #707078;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* SEGUNDA DESCRIÇÃO */
+.descricao-secundaria {
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #fafafa;
+    border: 1px solid #e8e8ec;
+    border-radius: 12px;
+}
+
+.bolinhas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 12px;
+}
+
+.bolinhas span {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-color: #ffffff;
+    border: 2px solid #d1d1d8;
+    border-radius: 50%;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.bolinhas span:hover {
+    border-color: #c62828;
+    background-color: #fff0f0;
+}
+
+.descricao-secundaria p {
+    color: #44444c;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* RODAPÉ */
+.rodape {
+    min-height: 100px;
+    padding: 28px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #171719;
+    color: #ffffff;
+    border-top: 3px solid #c62828;
+}
+
+.rodape p {
+    color: #eeeeee;
+    font-size: 13px;
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+    main {
+        padding: 22px 3%;
+    }
+
+    .item {
+        grid-template-columns: 72px minmax(0, 1fr) 155px;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .miniatura {
+        width: 60px;
+        height: 60px;
+    }
+
+    .imagem-principal {
+        height: 270px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 650px) {
+    .cabecalho {
+        padding: 16px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu {
+        gap: 8px;
+    }
+
+    .menu a {
+        padding: 6px;
+        font-size: 13px;
+    }
+
+    main {
+        padding: 16px 12px;
+    }
+
+    .item {
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+    }
+
+    .miniaturas {
+        gap: 12px;
+    }
+
+    .miniatura {
+        width: 52px;
+        height: 52px;
+        padding: 3px;
+        border-radius: 9px;
+    }
+
+    .imagem-principal {
+        height: 240px;
+        padding: 8px;
+    }
+
+    .informacoes {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 14px;
+        padding-top: 6px;
+    }
+
+    .descricao h3 {
+        font-size: 15px;
+    }
+
+    .descricao p {
+        font-size: 12px;
+    }
+
+    .descricao-secundaria {
+        padding: 12px 8px;
+        gap: 10px;
+    }
+
+    .bolinhas {
+        gap: 8px;
+    }
+
+    .bolinhas span {
+        width: 24px;
+        height: 24px;
+    }
+
+    .descricao-secundaria p {
+        font-size: 12px;
+    }
+
+    .rodape {
+        min-height: 80px;
+        padding: 22px 5%;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 380px) {
+    .cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .item {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 9px;
+        padding: 10px;
+    }
+
+    .miniatura {
+        width: 42px;
+        height: 42px;
+    }
+
+    .imagem-principal {
+        height: 190px;
+    }
+
+    .informacoes {
+        grid-template-columns: 1fr;
+    }
+}
