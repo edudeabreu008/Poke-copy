@@ -9,3 +9,6 @@ Futuras atualizações:
 - adicionar tipagem e fraquezas
 - adicionar mega evoluções e gigantamax
 - adicionar formas regionais
+
+
+  todos os direitos reservados a: The Pokémon Company
